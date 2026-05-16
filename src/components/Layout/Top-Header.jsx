@@ -5,7 +5,7 @@ export function Header({ activePage = 1 }) {
 
   return (
     <>
-      <div className="bg-[url('/src/assets/images/bg-sidebar-mobile.svg')] bg-cover bg-center h-36 flex justify-center gap-3 md:hidden">
+      <div className="bg-[url('/images/bg-sidebar-mobile.svg')] bg-cover bg-center h-36 flex justify-center gap-3 md:hidden">
         {pageNumber.map((pN) => (
           <div key={pN} className="mt-6 ">
             <span

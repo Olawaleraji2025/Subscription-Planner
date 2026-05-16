@@ -1,10 +1,12 @@
+import iconThankYou from "/src/assets/images/icon-thank-you.svg";
+
 export function ThankYouPage() {
   return (
     <>
       <div className="w-full shadow-lg mx-auto my-0 z-10 p-6.25 max-w-75 bg-white rounded-lg md:shadow-none md:max-w-100">
         <div className="flex-col justify-center flex text-center items-center gap-6 mt-8">
           <img
-            src="src/assets/images/icon-thank-you.svg"
+            src={iconThankYou}
             alt="Thank you icon"
             className="w-12"
           />
