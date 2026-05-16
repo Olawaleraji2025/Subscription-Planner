@@ -12,21 +12,21 @@ export function PlanSelection() {
   const plans = [
     {
       id: "Arcade",
-      img: "/src/assets/images/icon-arcade.svg",
+      img: "src/assets/images/icon-arcade.svg",
       title: "Arcade",
       monthly: 9,
       yearly: 90,
     },
     {
       id: "Advanced",
-      img: "/src/assets/images/icon-advanced.svg",
+      img: "src/assets/images/icon-advanced.svg",
       title: "Advanced",
       monthly: 12,
       yearly: 120,
     },
     {
       id: "Pro",
-      img: "/src/assets/images/icon-pro.svg",
+      img: "src/assets/images/icon-pro.svg",
       title: "Pro",
       monthly: 15,
       yearly: 150,
