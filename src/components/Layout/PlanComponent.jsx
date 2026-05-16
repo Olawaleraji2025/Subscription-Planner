@@ -3,6 +3,9 @@ import { Label } from "/src/components/ui/label";
 import { Button } from "/src/components/ui/button";
 import { useSelector, useDispatch } from "react-redux";
 import { setPlan, setBilling, setPlanPrice } from "/src/features/planSelect";
+import iconArcade from "/src/assets/images/icon-arcade.svg";
+import iconAdvanced from "/src/assets/images/icon-advanced.svg";
+import iconPro from "/src/assets/images/icon-pro.svg";
 
 export function PlanSelection() {
   const dispatch = useDispatch();
@@ -12,21 +15,21 @@ export function PlanSelection() {
   const plans = [
     {
       id: "Arcade",
-      img: "/src/assets/images/icon-arcade.svg",
+      img: iconArcade,
       title: "Arcade",
       monthly: 9,
       yearly: 90,
     },
     {
       id: "Advanced",
-      img: "/src/assets/images/icon-advanced.svg",
+      img: iconAdvanced,
       title: "Advanced",
       monthly: 12,
       yearly: 120,
     },
     {
       id: "Pro",
-      img: "/src/assets/images/icon-pro.svg",
+      img: iconPro,
       title: "Pro",
       monthly: 15,
       yearly: 150,
