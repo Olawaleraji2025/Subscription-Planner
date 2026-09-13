@@ -2,8 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 
 const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (email === "") return "Email is required";
   if (!/@/.test(email)) return "Enter a valid Email";
+  if (!emailRegex.test(email)) return "Enter a valid Email";
   return "";
 };
 
@@ -11,11 +13,18 @@ const validatePhone = (phone) => {
   if (phone === "") return "This field is required";
   if (/[a-zA-Z]/.test(phone)) return "Enter a valid Number";
   if (!/\d/.test(phone)) return "Enter a valid Number";
+  if (phone.length < 10) return "Phone number must be at least 10 characters";
+  return "";
+};
+
+const validateName = (name) => {
+  if (name === "") return "Name is required";
+  if (/\d/.test(name)) return "Name must contain only letters";
   return "";
 };
 
 const computeErrors = ({ name, email, phone }) => {
-  const nameError = name.trim() === "" ? "Name is required" : "";
+  const nameError = validateName(name.trim());
   const emailError = validateEmail(email.trim());
   const phoneError = validatePhone(phone.trim());
 

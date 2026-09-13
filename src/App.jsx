@@ -28,6 +28,12 @@ function App() {
     values.email.trim() !== "" &&
     values.phone.trim() !== "";
   const isFormValid = hasNoErrors && fieldsNotEmpty;
+  const planSelected = useSelector(
+    (state) => state.theUserPlans.activePlanName && state.theUserPlans.activePlanName !== "",
+  );
+  const addOnSelected = useSelector(
+    (state) => !!state.theSelectedAdon.selectedAddOns?.length,
+  );
   const pages = [
     <FieldDemo />,
     <PlanSelection />,
@@ -61,7 +67,11 @@ function App() {
                     </button>
                   ) : null}
                   <Button
-                    disabled={activePage === 0 && !isFormValid}
+                    disabled={
+                      (activePage === 0 && !isFormValid) ||
+                      (activePage === 1 && !planSelected) ||
+                      (activePage === 2 && !addOnSelected)
+                    }
                     onClick={() => dispatch(nextPage())}
                     className={
                       activePage === 3
